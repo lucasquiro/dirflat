@@ -1,0 +1,15 @@
+x primero se verfica que las rutas ingresadas existan
+x luego que ambas rutas esten el mismo disco
+- que en la ruta de destino haya almacenamiento suficiente para la accion de copiar o mover
+- luego se revisa recursivamente todo el arbol de directorios enumerando todas los archivos de dentro
+- con un algoritmo de clasificacion se separan las rutas de archivos en comprimidos, imagenes, videos y documentos
+- una ves creado este mapa de el arbol de directorios, se crea una estadistica de archivos donde se separa, comprimidos, imagenes, videos y documentos
+- se en la lista organizada se revisa que los archivos no tengan el mismo nombre, en caso de tenerlos se verifica el peso del archivo si es el mismo 
+peso se crea un hash y si vuelve a ser el mismo solo se copia 1 de los 2 y el otro se elimina
+- en caso de que el hash sea distinto se guarda la ruta original con el nombre origininal y un atributo rename con el nuevo nombre
+- se crean las carpetas correspondientes en el destino
+- se mueven los archivos segun su clasificacion usando sus rutas almacenadas previamente y organizadas con el algoritmo de orden
+- una ves se an terminado de mover los archivos, se vuelve a analizar el arbol de directorios donde se buscan archivos que 
+deberian hanberse movido pero que por algun motivo no se movieron
+- si no se encuentra nada se procede a mover todos los demas archivos a una carpeta llamada otros
+- una ves que el arbol de directorios quedo vacio, se comprueba el peso del mismo si es igual a 0 se elimina el arbol
